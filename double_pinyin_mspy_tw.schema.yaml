@@ -7,8 +7,9 @@ schema:
   version: "0.15"
   author:
     - 佛振 <chen.sst@gmail.com>
+    - Colin Su <littleq0903@gmail.com>
   description: |
-    朙月拼音＋MSPY雙拼方案。
+    朙月拼音＋MSPY雙拼臺灣正體方案。
   dependencies:
     - stroke
 
@@ -17,9 +18,9 @@ switches:
     reset: 0
     states: [ 中文, 西文 ]
   - name: full_shape
-    states: [ 半角, 全角 ]
+    states: [ 半型, 全型 ]
   - name: simplification
-    states: [ 漢字, 汉字 ]
+    states: [ 繁體, 简体 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
   - name: zh_tw

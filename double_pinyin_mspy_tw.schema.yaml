@@ -20,11 +20,13 @@ switches:
   - name: full_shape
     states: [ 半型, 全型 ]
   - name: simplification
-    states: [ 繁體, 简体 ]
+    reset: 0
+    states:
+      - 臺灣正體
+      - 简体中文
   - name: ascii_punct
     states: [ 。，, ．， ]
-  - name: zh_tw
-    reset: 1
+
 
 engine:
   processors:
@@ -48,6 +50,7 @@ engine:
     - script_translator
   filters:
     - simplifier
+    - simplifier@simplification
     - uniquifier
 
 speller:
@@ -141,9 +144,9 @@ reverse_lookup:
   comment_format:
     - xform/([nl])v/$1ü/
     
-simplifier:
-  opencc_config: t2tw.json
+simplification:
   option_name: zh_tw
+  opencc_config: t2tw.json
 
 punctuator:
   import_preset: default
